@@ -6,18 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // Log initial state
-  console.log("Initial animation state:", window.getComputedStyle(marquee).animationPlayState);
-
   // Create the Intersection Observer
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log("Marquee in view, starting animation.");
+          console.log("Marquee in view: starting animation.");
           marquee.style.animationPlayState = "running"; // Start animation
         } else {
-          console.log("Marquee out of view, pausing animation.");
+          console.log("Marquee out of view: pausing animation.");
           marquee.style.animationPlayState = "paused"; // Pause animation
         }
       });
