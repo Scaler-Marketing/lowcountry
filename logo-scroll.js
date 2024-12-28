@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   const marquee = document.querySelector(".logo_component");
 
+  if (!marquee) {
+    console.error("Marquee element not found.");
+    return;
+  }
+
+  // Log initial state
+  console.log("Initial animation state:", window.getComputedStyle(marquee).animationPlayState);
+
   // Create the Intersection Observer
   const observer = new IntersectionObserver(
     (entries) => {
