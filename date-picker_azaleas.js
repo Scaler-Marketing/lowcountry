@@ -45,7 +45,6 @@ function init() {
   // Clear the inputs on initialization
   updateInputs();
 
-  // Handle form submission
   $('#customForm').submit(function (e) {
     e.preventDefault();
     const checkInOriginal = $('#checkIn').data('originalDate');
